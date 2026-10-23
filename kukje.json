@@ -1,0 +1,2537 @@
+[
+  {
+    "status": "current",
+    "name": "Post Ritual Bodies",
+    "nameKo": "제의를 품은 신체들",
+    "startDate": "2026-08-28",
+    "endDate": "2026-10-31",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "upcoming",
+    "name": "BLANK",
+    "startDate": "2026-11-19",
+    "endDate": "2027-01-31",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "upcoming",
+    "name": "Stems and Nodes",
+    "nameKo": "줄기와 마디",
+    "startDate": "2026-11-19",
+    "endDate": "2027-01-31",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Changing Unchanging",
+    "nameKo": "변하는 변하지 않는",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-18",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Pictos and Pitwall",
+    "nameKo": "핏월과 픽토",
+    "startDate": "2026-08-24",
+    "endDate": "2026-10-18",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Poetics of Form",
+    "nameKo": "형태의 시학",
+    "startDate": "2026-06-09",
+    "endDate": "2026-07-19",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Objects in Oscillation",
+    "nameKo": "진동하는 사물들",
+    "startDate": "2026-06-09",
+    "endDate": "2026-07-19",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "On the Move",
+    "nameKo": "이동 중",
+    "startDate": "2026-04-24",
+    "endDate": "2026-06-28",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Zen Master Eyeball",
+    "nameKo": "안구선사 (眼球禪師)",
+    "startDate": "2026-03-19",
+    "endDate": "2026-05-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Chora",
+    "nameKo": "코라",
+    "startDate": "2026-03-19",
+    "endDate": "2026-05-10",
+    "locations": [
+      "Seoul K3",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Gore Deco",
+    "startDate": "2025-12-09",
+    "endDate": "2026-02-15",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Finnegans Wake",
+    "nameKo": "피네간의 경야",
+    "startDate": "2025-12-09",
+    "endDate": "2026-02-15",
+    "locations": [
+      "Seoul K3",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Digital Art Showcase & Conference〈SIGNAL ON SALE〉: The Inevitable, Inacceptable",
+    "nameKo": "디지털 아트 쇼케이스 및 컨퍼런스〈SIGNAL ON SALE〉: 불가피한 상황과 피치 못할 사정들",
+    "startDate": "2025-11-03",
+    "endDate": "2025-11-19",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Conditions for holding a natural form",
+    "nameKo": "자연 형태를 담는 조건",
+    "startDate": "2025-09-02",
+    "endDate": "2025-10-26",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Rocking to Infinity",
+    "startDate": "2025-09-02",
+    "endDate": "2025-10-26",
+    "locations": [
+      "Seoul K3",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "off-site 2: Eleven Episodes",
+    "nameKo": "오프사이트 2: 열한 가지 에피소드",
+    "startDate": "2025-09-02",
+    "endDate": "2025-10-26",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Twelve Questions",
+    "nameKo": "열두 개의 질문",
+    "startDate": "2025-08-22",
+    "endDate": "2025-10-19",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Next Painting: As We Are",
+    "startDate": "2025-06-05",
+    "endDate": "2025-07-20",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "A Faraway Today",
+    "nameKo": "아득한 오늘",
+    "startDate": "2025-06-04",
+    "endDate": "2025-07-20",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Inevitable, Inacceptable",
+    "nameKo": "불가피한 상황과 피치 못할 사정들",
+    "startDate": "2025-04-25",
+    "endDate": "2025-07-20",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Ha Chong-Hyun",
+    "startDate": "2025-03-20",
+    "endDate": "2025-05-11",
+    "locations": [
+      "Seoul K1",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Nature Rules",
+    "nameKo": "자연국가",
+    "startDate": "2025-03-20",
+    "endDate": "2025-05-11",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Moving Stillness",
+    "startDate": "2024-12-03",
+    "endDate": "2025-01-26",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Rocks, Smoke, and Pianos",
+    "nameKo": "돌과 연기와 피아노",
+    "startDate": "2024-12-03",
+    "endDate": "2025-01-26",
+    "locations": [
+      "Seoul K2",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Soft Skills and Underground Whispers",
+    "nameKo": "마음의 기술과 저변의 속삭임",
+    "startDate": "2024-08-30",
+    "endDate": "2024-11-03",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Phantom and A Map",
+    "nameKo": "유령 그리고 지도",
+    "startDate": "2024-08-30",
+    "endDate": "2024-11-03",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Fish & Chips",
+    "startDate": "2024-06-04",
+    "endDate": "2024-07-28",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "RENASCENCE",
+    "startDate": "2024-05-23",
+    "endDate": "2024-07-28",
+    "locations": []
+  },
+  {
+    "status": "past",
+    "name": "Easy Heavy",
+    "startDate": "2024-05-08",
+    "endDate": "2024-06-30",
+    "locations": []
+  },
+  {
+    "status": "past",
+    "name": "Kim Yun Shin",
+    "startDate": "2024-03-19",
+    "endDate": "2024-04-28",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "MARCH",
+    "nameKo": "마치",
+    "startDate": "2024-03-19",
+    "endDate": "2024-04-28",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Distant and Faraway Utopia",
+    "nameKo": "아련하고 희미한 유토피아",
+    "startDate": "2024-03-15",
+    "endDate": "2024-04-21",
+    "locations": [
+      "Busan",
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Normal order aimed at failure",
+    "nameKo": "실패를 목적으로 한 정상적 질서",
+    "startDate": "2024-02-01",
+    "endDate": "2024-03-03",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wook-kyung Choi",
+    "startDate": "2024-02-01",
+    "endDate": "2024-03-03",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "BLOW-UP",
+    "startDate": "2023-12-14",
+    "endDate": "2024-01-28",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Roni Horn",
+    "startDate": "2023-11-16",
+    "endDate": "2023-12-31",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Latent Dwelling",
+    "nameKo": "동면 한옥",
+    "startDate": "2023-08-30",
+    "endDate": "2023-10-08",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anish Kapoor",
+    "startDate": "2023-08-30",
+    "endDate": "2023-10-22",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "A Stranger to Strangers",
+    "nameKo": "낯설은 얼굴들처럼",
+    "startDate": "2023-08-25",
+    "endDate": "2023-10-22",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "OP.VR@Kukje/F1963.BUSAN",
+    "startDate": "2023-05-03",
+    "endDate": "2023-07-02",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Lee Ufan",
+    "startDate": "2023-04-04",
+    "endDate": "2023-05-28",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "CALDER",
+    "startDate": "2023-04-04",
+    "endDate": "2023-05-28",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Marine Layer",
+    "startDate": "2023-03-17",
+    "endDate": "2023-04-23",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wonder Blocks",
+    "startDate": "2023-03-10",
+    "endDate": "2023-04-16",
+    "locations": [
+      "Seoul Hanok"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Over the Layers II",
+    "nameKo": "복선伏線을 넘어서 II",
+    "startDate": "2023-02-09",
+    "endDate": "2023-03-19",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "<div>\"Image, Symbol, Prayer\"",
+    "nameKo": "｢이미지, 상징, 기도｣</div>",
+    "startDate": "2022-12-15",
+    "endDate": "2023-01-29",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Where You Stand",
+    "startDate": "2022-11-17",
+    "endDate": "2022-12-31",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2",
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "LEE SEUNG JIO",
+    "startDate": "2022-09-01",
+    "endDate": "2022-10-30",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Mesmerizing Mesh",
+    "nameKo": "황홀망恍惚網",
+    "startDate": "2022-08-30",
+    "endDate": "2022-10-02",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Quasi-Legit",
+    "nameKo": "의사擬似-합법",
+    "startDate": "2022-08-30",
+    "endDate": "2022-10-30",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Heejoon Lee",
+    "startDate": "2022-07-01",
+    "endDate": "2022-08-14",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Colors of Yoo Youngkuk",
+    "startDate": "2022-06-09",
+    "endDate": "2022-08-21",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Ha Chong-Hyun",
+    "startDate": "2022-04-23",
+    "endDate": "2022-08-24",
+    "locations": [
+      "Special Exhibition"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "nuns and monks by the sea",
+    "startDate": "2022-04-05",
+    "endDate": "2022-05-15",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "HA CHONG-HYUN",
+    "startDate": "2022-02-15",
+    "endDate": "2022-03-13",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Life",
+    "nameKo": "삶",
+    "startDate": "2022-01-21",
+    "endDate": "2022-03-13",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Smell of Eucalyptus",
+    "nameKo": "유칼립투스의 향기",
+    "startDate": "2021-12-16",
+    "endDate": "2022-01-30",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "KWON YOUNG-WOO",
+    "startDate": "2021-12-09",
+    "endDate": "2022-01-30",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Julian Opie",
+    "startDate": "2021-10-07",
+    "endDate": "2021-11-28",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Your Faces",
+    "nameKo": "너의 표정",
+    "startDate": "2021-10-01",
+    "endDate": "2021-12-19",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Park Seo-Bo",
+    "startDate": "2021-09-15",
+    "endDate": "2021-10-31",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Mesmerizing Mesh",
+    "nameKo": "황홀망恍惚網",
+    "startDate": "2021-08-24",
+    "endDate": "2021-09-12",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "HUMAN LIGHTS",
+    "startDate": "2021-08-06",
+    "endDate": "2021-09-12",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Treasure Island",
+    "nameKo": "보물섬",
+    "startDate": "2021-06-17",
+    "endDate": "2021-08-01",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Other Side of Things",
+    "nameKo": "사물의 뒷모습",
+    "startDate": "2021-05-13",
+    "endDate": "2021-07-25",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Robert Mapplethorpe: More Life",
+    "startDate": "2021-02-18",
+    "endDate": "2021-03-28",
+    "locations": [
+      "Seoul"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "NEW WORKS",
+    "startDate": "2020-12-17",
+    "endDate": "2021-01-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "IT'S CRUCIAL TO HAVE AN ACTIVE FANTASY LIFE",
+    "startDate": "2020-12-10",
+    "endDate": "2021-01-31",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Candida Höfer",
+    "startDate": "2020-09-18",
+    "endDate": "2020-11-08",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "a'strict",
+    "startDate": "2020-08-13",
+    "endDate": "2020-09-27",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Short People",
+    "nameKo": "작은 사람들",
+    "startDate": "2020-06-26",
+    "endDate": "2020-09-09",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wook-kyung Choi",
+    "startDate": "2020-06-18",
+    "endDate": "2020-08-09",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Recalcitrant Radiance",
+    "nameKo": "항명하는 광휘",
+    "startDate": "2019-12-13",
+    "endDate": "2020-02-29",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Beautiful. Strange. Dirty.",
+    "nameKo": "아름다움. 기묘함. 더러움.",
+    "startDate": "2019-11-28",
+    "endDate": "2020-01-19",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "When The Year 2000 Comes",
+    "nameKo": "서기 2000년이 오면",
+    "startDate": "2019-09-03",
+    "endDate": "2019-11-17",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "In our dreams we have a plan",
+    "startDate": "2019-08-14",
+    "endDate": "2019-11-30",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Ha Chong-Hyun",
+    "startDate": "2019-05-29",
+    "endDate": "2019-08-04",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "earthing",
+    "nameKo": "땅과 맞닿다 接地",
+    "startDate": "2019-05-16",
+    "endDate": "2019-07-14",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Adaptations",
+    "startDate": "2019-03-21",
+    "endDate": "2019-04-28",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Min Joung-Ki",
+    "startDate": "2019-01-29",
+    "endDate": "2019-03-03",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Koo Bohnchang",
+    "startDate": "2018-12-14",
+    "endDate": "2019-03-17",
+    "locations": [
+      "Busan"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Catalyst",
+    "startDate": "2018-11-29",
+    "endDate": "2019-01-06",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Korean Abstract Art: Kim Whanki and Dansaekhwa",
+    "nameKo": "한국의 추상미술: 김환기와 단색화",
+    "startDate": "2018-11-08",
+    "endDate": "2019-03-02",
+    "locations": [
+      "Special Exhibition"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "COLORS FROM NATURE",
+    "nameKo": "유영국의 색채추상",
+    "startDate": "2018-09-04",
+    "endDate": "2018-10-21",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "SPACES OF ENLIGHTENMENT",
+    "startDate": "2018-07-26",
+    "endDate": "2018-08-26",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Remembered Words",
+    "startDate": "2018-05-25",
+    "endDate": "2018-07-15",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Joris Laarman Lab: Gradients",
+    "startDate": "2018-05-10",
+    "endDate": "2018-06-17",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "ENDLESS DRAWING",
+    "startDate": "2018-03-20",
+    "endDate": "2018-04-22",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sky",
+    "startDate": "2018-02-01",
+    "endDate": "2018-02-28",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Single Breath Transfer",
+    "startDate": "2017-11-30",
+    "endDate": "2018-01-14",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Cut Up and Silicone, Female Idol, WS",
+    "startDate": "2017-09-14",
+    "endDate": "2017-10-29",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Gridded Currents",
+    "startDate": "2017-07-20",
+    "endDate": "2017-08-20",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Farewell",
+    "nameKo": "안녕 安寧",
+    "startDate": "2017-05-25",
+    "endDate": "2017-07-02",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "A Snowflake",
+    "startDate": "2017-05-25",
+    "endDate": "2017-07-02",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Various Whites",
+    "startDate": "2017-03-16",
+    "endDate": "2017-04-30",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Words Just for You",
+    "nameKo": "당신만을 위한 말",
+    "startDate": "2017-02-21",
+    "endDate": "2017-04-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Yong-Ik",
+    "startDate": "2016-11-22",
+    "endDate": "2016-12-30",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "American Years 1960s - 1970s",
+    "startDate": "2016-08-31",
+    "endDate": "2016-10-30",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Gathering Clouds",
+    "startDate": "2016-08-31",
+    "endDate": "2016-10-30",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wellknown Unknown",
+    "nameKo": "유명한 무명",
+    "startDate": "2016-06-28",
+    "endDate": "2016-07-31",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "U Sunok: In Praise of Inaction",
+    "nameKo": "우순옥: 무위예찬(無爲禮讚)",
+    "startDate": "2016-05-13",
+    "endDate": "2016-06-12",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Le Corbusier, Pierre Jeanneret: Chandigarh, India, 1951-66",
+    "nameKo": "르 코르뷔지에, 피에르 잔느레: 인도 찬디가르 1951-66",
+    "startDate": "2016-04-26",
+    "endDate": "2016-06-12",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Chung Chang-Sup",
+    "startDate": "2016-02-26",
+    "endDate": "2016-03-27",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "When Process becomes Form: Dansaekhwa and Korean abstraction",
+    "nameKo": "과정이 형태가 될 때: 단색화와 한국 추상미술",
+    "startDate": "2016-02-20",
+    "endDate": "2016-04-24",
+    "locations": [
+      "Special Exhibition"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean-Michel Othoniel",
+    "startDate": "2016-02-02",
+    "endDate": "2016-03-27",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Hong Joo",
+    "startDate": "2015-12-17",
+    "endDate": "2016-01-24",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kwon Young-Woo",
+    "startDate": "2015-10-30",
+    "endDate": "2015-12-06",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Ha Chong-Hyun",
+    "startDate": "2015-09-17",
+    "endDate": "2015-10-18",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "feelings",
+    "startDate": "2015-09-01",
+    "endDate": "2015-11-29",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Gabriel Kuri",
+    "startDate": "2015-06-04",
+    "endDate": "2015-07-05",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Phantom Footsteps",
+    "startDate": "2015-06-04",
+    "endDate": "2015-07-25",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Dansaekhwa, Collateral Event of the 56th International Art Exhibition – la Biennale di Venezia",
+    "startDate": "2015-05-08",
+    "endDate": "2015-08-15",
+    "locations": [
+      "Special Exhibition"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Bill Viola",
+    "startDate": "2015-03-05",
+    "endDate": "2015-05-03",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Picturing Landscape",
+    "nameKo": "그림 풍경",
+    "startDate": "2014-12-16",
+    "endDate": "2015-01-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "David Nash",
+    "startDate": "2014-12-16",
+    "endDate": "2015-01-25",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Donald Judd",
+    "startDate": "2014-10-30",
+    "endDate": "2014-12-14",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Art of Dansaekhwa",
+    "nameKo": "단색화의 예술",
+    "startDate": "2014-08-28",
+    "endDate": "2014-10-19",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Reminiscence",
+    "nameKo": "회상回想",
+    "startDate": "2014-07-10",
+    "endDate": "2014-08-17",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Calder Jewelry",
+    "startDate": "2014-07-10",
+    "endDate": "2014-08-17",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Roni Horn",
+    "startDate": "2014-05-20",
+    "endDate": "2014-06-22",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Blue Hours",
+    "startDate": "2014-04-10",
+    "endDate": "2014-05-11",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Reading Landscapes",
+    "startDate": "2014-04-10",
+    "endDate": "2014-05-11",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Julian Opie",
+    "startDate": "2014-02-13",
+    "endDate": "2014-03-23",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Grey & 12",
+    "startDate": "2013-12-19",
+    "endDate": "2014-01-29",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "What About Love",
+    "startDate": "2013-11-28",
+    "endDate": "2014-01-12",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Locals",
+    "startDate": "2013-11-14",
+    "endDate": "2013-12-31",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Carlito Carvalhosa",
+    "startDate": "2013-10-12",
+    "endDate": "2013-11-10",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anomalies",
+    "startDate": "2013-09-05",
+    "endDate": "2013-10-05",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Prosaic Landscape",
+    "nameKo": "살풍경",
+    "startDate": "2013-06-13",
+    "endDate": "2013-07-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Référence à Elle",
+    "startDate": "2013-05-17",
+    "endDate": "2013-06-30",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Song of Slant Rhymes",
+    "nameKo": "기울어진 각운들",
+    "startDate": "2013-04-23",
+    "endDate": "2013-06-30",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sterling Ruby",
+    "startDate": "2013-04-11",
+    "endDate": "2013-05-10",
+    "locations": [
+      "Seoul K1",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean Royère",
+    "startDate": "2013-02-28",
+    "endDate": "2013-03-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean-Michel Basquiat",
+    "startDate": "2013-02-14",
+    "endDate": "2013-03-31",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Yuko Shiraishi",
+    "startDate": "2012-11-20",
+    "endDate": "2012-12-28",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "-verse",
+    "startDate": "2012-10-25",
+    "endDate": "2012-12-15",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kimsooja: To Breathe",
+    "startDate": "2012-08-29",
+    "endDate": "2012-10-10",
+    "locations": [
+      "Seoul K2",
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kyung Jeon,Eemyun Kang",
+    "startDate": "2012-08-23",
+    "endDate": "2012-09-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Calder Noir",
+    "startDate": "2012-07-12",
+    "endDate": "2012-08-17",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "PERSONAGES",
+    "startDate": "2012-05-23",
+    "endDate": "2012-06-29",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Paul McCarthy: nine dwarves",
+    "startDate": "2012-04-05",
+    "endDate": "2012-05-12",
+    "locations": [
+      "Seoul K3"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Eva Hesse: Spectres and Studiowork",
+    "startDate": "2012-02-28",
+    "endDate": "2012-04-14",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Joris Laarman",
+    "startDate": "2011-12-13",
+    "endDate": "2012-01-20",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Candida Höfer",
+    "startDate": "2011-11-25",
+    "endDate": "2011-12-31",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Drawing for a while",
+    "startDate": "2011-11-10",
+    "endDate": "2011-12-06",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anthony Caro",
+    "startDate": "2011-09-29",
+    "endDate": "2011-10-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jenny Holzer",
+    "startDate": "2011-09-08",
+    "endDate": "2011-10-31",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Cecily Brown",
+    "startDate": "2011-05-27",
+    "endDate": "2011-06-24",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Bohnchang Koo",
+    "startDate": "2011-03-24",
+    "endDate": "2011-05-10",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sungsic Moon",
+    "startDate": "2011-02-24",
+    "endDate": "2011-04-07",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Park, Seo-Bo",
+    "startDate": "2010-11-25",
+    "endDate": "2011-01-20",
+    "locations": [
+      "Seoul K1",
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anselm Reyle",
+    "startDate": "2010-10-09",
+    "endDate": "2010-11-10",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Roni Horn",
+    "startDate": "2010-08-31",
+    "endDate": "2010-10-03",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "oblique strategies",
+    "startDate": "2010-08-31",
+    "endDate": "2010-10-24",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Art Deco MASTERPIECES",
+    "startDate": "2010-07-02",
+    "endDate": "2010-08-15",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "REPEAT OFFENDER",
+    "startDate": "2010-07-02",
+    "endDate": "2010-08-05",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean-Michel Othoniel,Xavier Veilhan",
+    "startDate": "2010-05-22",
+    "endDate": "2010-06-26",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Night",
+    "startDate": "2010-05-04",
+    "endDate": "2010-06-17",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Touch",
+    "startDate": "2010-04-15",
+    "endDate": "2010-05-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Hong Joo",
+    "startDate": "2010-04-02",
+    "endDate": "2010-04-30",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "BCGKMRY",
+    "startDate": "2010-03-03",
+    "endDate": "2010-04-04",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Les Fleurs",
+    "startDate": "2010-02-24",
+    "endDate": "2010-03-31",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Translation",
+    "startDate": "2009-11-19",
+    "endDate": "2009-12-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Drawings",
+    "startDate": "2009-10-22",
+    "endDate": "2009-12-31",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Super Mega Factory",
+    "startDate": "2009-09-19",
+    "endDate": "2009-10-18",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sculpture",
+    "startDate": "2009-08-28",
+    "endDate": "2009-10-09",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Entr'acte",
+    "startDate": "2009-07-23",
+    "endDate": "2009-08-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Interiors",
+    "startDate": "2009-07-02",
+    "endDate": "2009-08-07",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "wildwood air",
+    "startDate": "2009-05-28",
+    "endDate": "2009-07-12",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Julian Opie",
+    "startDate": "2009-04-29",
+    "endDate": "2009-06-14",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Slawomir Elsner,Martin Mannig,Joanna M.Wezyk",
+    "startDate": "2009-04-16",
+    "endDate": "2009-05-17",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wandering",
+    "startDate": "2009-02-26",
+    "endDate": "2009-03-29",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Cosmetic Girls",
+    "startDate": "2008-11-28",
+    "endDate": "2009-01-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "I have nothing to say and I am saying it",
+    "startDate": "2008-10-24",
+    "endDate": "2008-11-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Handmade Memories",
+    "startDate": "2008-10-17",
+    "endDate": "2008-12-12",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "ANISH KAPOOR",
+    "startDate": "2008-09-03",
+    "endDate": "2008-10-05",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The Wet Psyche",
+    "startDate": "2008-08-29",
+    "endDate": "2008-09-29",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Irony & Gesture",
+    "startDate": "2008-07-17",
+    "endDate": "2008-08-14",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Transfiguration",
+    "startDate": "2008-06-27",
+    "endDate": "2008-08-17",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "re-collection",
+    "startDate": "2008-05-30",
+    "endDate": "2008-07-05",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "In through the outdoor",
+    "startDate": "2008-04-17",
+    "endDate": "2008-05-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Geheimnis der Farne",
+    "startDate": "2008-04-04",
+    "endDate": "2008-05-24",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "MEENA&SASA[44] KUKJE080307-080406",
+    "startDate": "2008-03-07",
+    "endDate": "2008-04-06",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Debris",
+    "startDate": "2008-01-25",
+    "endDate": "2008-02-26",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Candida Höfer",
+    "startDate": "2008-01-25",
+    "endDate": "2008-02-26",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Another Spring",
+    "startDate": "2007-12-15",
+    "endDate": "2008-01-13",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Collaborative Drawings",
+    "startDate": "2007-12-15",
+    "endDate": "2008-01-13",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "David Nash",
+    "startDate": "2007-10-26",
+    "endDate": "2007-11-26",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kukje Gallery 25th Anniversary Exhibition",
+    "startDate": "2007-10-05",
+    "endDate": "2007-11-05",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Roni Horn",
+    "startDate": "2007-09-20",
+    "endDate": "2007-10-20",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Hansel & Gretel",
+    "startDate": "2007-07-11",
+    "endDate": "2007-08-26",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Charlotte Perriand",
+    "startDate": "2007-05-04",
+    "endDate": "2007-06-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Abstraction",
+    "startDate": "2007-04-20",
+    "endDate": "2007-06-29",
+    "locations": [
+      "Seoul K2"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Group Show Part 2",
+    "startDate": "2007-02-09",
+    "endDate": "2007-03-18",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Group Show Part 1: On Painting",
+    "startDate": "2007-01-10",
+    "endDate": "2007-01-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "microhome",
+    "startDate": "2006-11-23",
+    "endDate": "2006-12-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean-Michel Basquiat",
+    "startDate": "2006-10-12",
+    "endDate": "2006-11-12",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Candice Breitz",
+    "startDate": "2006-08-29",
+    "endDate": "2006-09-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Bohnchang Koo",
+    "startDate": "2006-07-07",
+    "endDate": "2006-07-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Are you lonesome tonight [2F] PaintingS(e)oul [1F]",
+    "startDate": "2006-05-31",
+    "endDate": "2006-06-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "George Nakashima,Serge Mouille",
+    "startDate": "2006-04-18",
+    "endDate": "2006-05-18",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "A Survey 1952 -1992",
+    "startDate": "2006-03-03",
+    "endDate": "2006-04-04",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Habitual Habitat",
+    "startDate": "2006-01-20",
+    "endDate": "2006-02-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Aggregation 2005",
+    "startDate": "2005-10-15",
+    "endDate": "2005-12-18",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "The joy of sex",
+    "startDate": "2005-10-07",
+    "endDate": "2005-11-06",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "TIMESPACES",
+    "startDate": "2005-08-30",
+    "endDate": "2005-09-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Wook Kyung Choi",
+    "startDate": "2005-05-26",
+    "endDate": "2005-07-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Louise Bourgeois",
+    "startDate": "2005-04-12",
+    "endDate": "2005-05-13",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jean Prouve",
+    "startDate": "2005-02-28",
+    "endDate": "2005-03-31",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jenny Holzer",
+    "startDate": "2004-12-10",
+    "endDate": "2005-01-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Eva Hesse",
+    "startDate": "2004-10-05",
+    "endDate": "2004-11-27",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Over the Layers",
+    "startDate": "2004-09-03",
+    "endDate": "2004-09-24",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "MeeNa Park,Steven Gontarsky,Suejin Chung",
+    "startDate": "2004-06-30",
+    "endDate": "2004-07-21",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Richard Long",
+    "startDate": "2004-05-04",
+    "endDate": "2004-06-13",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sue Williams,Ghada Amer,Shirazeh Houshiary",
+    "startDate": "2004-03-17",
+    "endDate": "2004-04-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "REAL REALITY",
+    "startDate": "2004-02-17",
+    "endDate": "2004-03-06",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Alexander Calder",
+    "startDate": "2003-12-18",
+    "endDate": "2004-02-27",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Joseph Beuys",
+    "startDate": "2003-10-14",
+    "endDate": "2003-11-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "There is No Place - The Connective",
+    "startDate": "2003-09-04",
+    "endDate": "2003-09-27",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anish Kapoor",
+    "startDate": "2003-05-21",
+    "endDate": "2003-06-29",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Bill Viola",
+    "startDate": "2003-03-19",
+    "endDate": "2003-04-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Hong Joo",
+    "startDate": "2002-10-31",
+    "endDate": "2002-11-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jeff Wall,Rachel Whiteread",
+    "startDate": "2002-09-10",
+    "endDate": "2002-10-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Louise Bourgeois",
+    "startDate": "2002-05-23",
+    "endDate": "2002-06-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "AGGREGATION",
+    "startDate": "2002-03-26",
+    "endDate": "2002-04-27",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "L'episteme of painting",
+    "startDate": "2002-02-22",
+    "endDate": "2002-03-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anselm Kiefer",
+    "startDate": "2001-11-16",
+    "endDate": "2002-01-27",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "On Road",
+    "startDate": "2001-02-27",
+    "endDate": "2001-03-24",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kiki Smith",
+    "startDate": "2000-11-17",
+    "endDate": "2000-12-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Organic Geometry",
+    "startDate": "2000-09-22",
+    "endDate": "2000-10-20",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Layers",
+    "startDate": "2000-03-27",
+    "endDate": "2000-04-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Chae Mi Hyun",
+    "startDate": "1999-12-23",
+    "endDate": "2000-01-03",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Ed Ruscha",
+    "startDate": "1999-11-17",
+    "endDate": "1999-12-18",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Hong Joo",
+    "startDate": "1999-10-14",
+    "endDate": "1999-11-02",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Frank Stella",
+    "startDate": "1999-09-10",
+    "endDate": "1999-09-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Slow, Same",
+    "startDate": "1999-05-14",
+    "endDate": "1999-06-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Fixing with thread and soil",
+    "startDate": "1999-04-07",
+    "endDate": "1999-04-28",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Andres Serrano",
+    "startDate": "1999-02-26",
+    "endDate": "1999-03-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Hwang Yong Yop",
+    "startDate": "1998-07-15",
+    "endDate": "1998-08-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Dream for Survival",
+    "startDate": "1998-05-14",
+    "endDate": "1998-06-13",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Choi Jeong Hwa",
+    "startDate": "1998-01-16",
+    "endDate": "1998-02-07",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "about vanishment I, II",
+    "startDate": "1997-11-21",
+    "endDate": "1997-12-11",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Tony Smith",
+    "startDate": "1997-09-26",
+    "endDate": "1997-10-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Organic Geometry",
+    "startDate": "1997-08-26",
+    "endDate": "1997-09-13",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Oh Soon Ja",
+    "startDate": "1997-05-16",
+    "endDate": "1997-06-16",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Geneology on my father",
+    "startDate": "1996-09-11",
+    "endDate": "1996-09-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Not Conservative, in conserve (becoming a gesture of the real)",
+    "startDate": "1996-05-31",
+    "endDate": "1996-06-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "1960s",
+    "startDate": "1996-04-19",
+    "endDate": "1996-05-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Lim Choong Sup",
+    "startDate": "1995-11-28",
+    "endDate": "1995-12-28",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jonathan Borofsky",
+    "startDate": "1995-10-24",
+    "endDate": "1995-11-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "scultures, vitrines, objects, drawings",
+    "startDate": "1995-10-24",
+    "endDate": "1995-11-19",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anselm Kiefer",
+    "startDate": "1995-09-22",
+    "endDate": "1995-10-17",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Yoon Dong Chun",
+    "startDate": "1995-05-24",
+    "endDate": "1995-06-07",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Sol LeWitt",
+    "startDate": "1995-04-14",
+    "endDate": "1995-05-12",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Hong Seung-Hye",
+    "startDate": "1995-03-16",
+    "endDate": "1995-03-28",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Oh Kyung Hwan",
+    "startDate": "1994-12-02",
+    "endDate": "1994-12-20",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Anthony Caro",
+    "startDate": "1994-10-26",
+    "endDate": "1994-11-23",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Robert Mangold",
+    "startDate": "1994-09-14",
+    "endDate": "1994-10-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Cosmovision",
+    "startDate": "1994-05-13",
+    "endDate": "1994-06-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Kim Keun Joong",
+    "startDate": "1993-11-19",
+    "endDate": "1993-12-04",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Cho Duck Hyun",
+    "startDate": "1993-06-22",
+    "endDate": "1993-07-30",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Frank Stella",
+    "startDate": "1993-04-03",
+    "endDate": "1993-05-01",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Materiellimmateriell",
+    "startDate": "1993-03-05",
+    "endDate": "1993-03-14",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Yoo Hyung Taek",
+    "startDate": "1992-12-08",
+    "endDate": "1992-12-17",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Painting, Drawings, Sculptures",
+    "startDate": "1992-10-27",
+    "endDate": "1992-11-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Works 1965-1991",
+    "startDate": "1992-09-15",
+    "endDate": "1992-10-14",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Lee Young Hark",
+    "startDate": "1992-06-02",
+    "endDate": "1992-06-13",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Hwang Yong Yop",
+    "startDate": "1992-05-12",
+    "endDate": "1992-05-25",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Jung Kwang",
+    "startDate": "1991-10-22",
+    "endDate": "1991-11-05",
+    "locations": [
+      "Seoul K1"
+    ]
+  },
+  {
+    "status": "past",
+    "name": "Helen Frankenthaler",
+    "startDate": "1991-09-26",
+    "endDate": "1991-10-10",
+    "locations": [
+      "Seoul K1"
+    ]
+  }
+]

@@ -1,5 +1,5 @@
-// Récupère les expositions de Kukje Gallery via son API JSON.
-// Usage : node kukje.mjs   → écrit expositions.json à côté du script.
+// Fetches Kukje Gallery exhibitions from its JSON API.
+// Usage: node kukje.mjs   → writes kukje.json next to the script.
 import { writeFile } from "node:fs/promises";
 
 const API = "https://www.kukjegallery.com/api/exhibitions";
@@ -10,23 +10,23 @@ const MONTHS = ["January", "February", "March", "April", "May", "June",
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function getPage(route, page) {
-  await sleep(1000); // reste poli avec le serveur
+  await sleep(1000); // be polite to the server
   const params = new URLSearchParams({ page, search_year: "all", location: "", a_no_e: "" });
   const res = await fetch(`${API}/${route}?${params}`, {
-    headers: { "User-Agent": "GalleryEventsBot/0.1 (agrégateur d'expositions)" },
+    headers: { "User-Agent": "GalleryEventsBot/0.1 (exhibition aggregator)" },
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} sur ${route} page ${page}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status} on ${route} page ${page}`);
   return (await res.json()).data;
 }
 
 async function getAll(route) {
   const first = await getPage(route, 1);
-  const items = [...(first.data ?? [])]; // /upcoming n'a pas de clé "data" quand c'est vide
+  const items = [...(first.data ?? [])]; // /upcoming has no "data" key when empty
   for (let p = 2; p <= first.maxpage; p++) items.push(...((await getPage(route, p)).data ?? []));
   return items;
 }
 
-// Décodage des entités HTML : numériques, lettres accentuées (&ouml; → ö) et ponctuation courante.
+// HTML entity decoding: numeric, accented letters (&ouml; → ö) and common punctuation.
 const ACCENTS = { acute: "́", grave: "̀", uml: "̈", circ: "̂", tilde: "̃", cedil: "̧", ring: "̊" };
 const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ndash: "–", mdash: "—",
   lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”", hellip: "…", middot: "·", times: "×" };
@@ -37,42 +37,42 @@ const decode = (s) =>
     .replace(/&([a-z]+);/gi, (m, n) => NAMED[n] ?? m)
     .replace(/[ \t ]+/g, " ");
 
-// "EN<br />\r\nKO" → { nom, nomKo } ; une ligne qui commence par ":" prolonge la précédente.
+// "EN<br />\r\nKO" → { name, nameKo }; a line starting with ":" continues the previous one.
 function splitTitle(raw) {
   const lines = decode(raw).split(/<br\s*\/?>/i).map((l) => l.trim()).filter(Boolean);
   const join = (ls) => ls.join(" ").replace(/\s+:/g, ":").trim() || undefined;
   const ko = join(lines.filter((l) => /[가-힣]/.test(l)));
   const en = join(lines.filter((l) => !/[가-힣]/.test(l)));
-  return { nom: en ?? ko, nomKo: en ? ko : undefined };
+  return { name: en ?? ko, nameKo: en ? ko : undefined };
 }
 
-// "June 9 – July 19, 2026" ou "August 24, 2026 - October 18, 2026" → dates ISO
+// "June 9 – July 19, 2026" or "August 24, 2026 - October 18, 2026" → ISO dates
 function parseDates(raw) {
   const m = raw.match(/([A-Z][a-z]+) (\d{1,2})(?:, (\d{4}))?\s*[–—-]\s*([A-Z][a-z]+) (\d{1,2}), (\d{4})/);
-  if (!m) return { dateDebut: undefined, dateFin: undefined };
+  if (!m) return { startDate: undefined, endDate: undefined };
   const [, m1, d1, y1, m2, d2, y2] = m;
   const iso = (y, mo, d) => `${y}-${String(MONTHS.indexOf(mo) + 1).padStart(2, "0")}-${d.padStart(2, "0")}`;
   const startYear = y1 ?? (MONTHS.indexOf(m1) > MONTHS.indexOf(m2) ? Number(y2) - 1 : y2);
-  return { dateDebut: iso(startYear, m1, d1), dateFin: iso(y2, m2, d2) };
+  return { startDate: iso(startYear, m1, d1), endDate: iso(y2, m2, d2) };
 }
 
 // [{areaTitle:"Seoul", areaItems:"K1"}, …] → ["Seoul K1", …]
-const places = (areas) => areas.map((a) => [a.areaTitle, a.areaItems].filter(Boolean).join(" "));
+const toLocations = (areas) => areas.map((a) => [a.areaTitle, a.areaItems].filter(Boolean).join(" "));
 
-const expositions = [];
+const exhibitions = [];
 for (const route of ROUTES) {
   const items = await getAll(route);
-  console.error(`[${route}] ${items.length} expositions`);
+  console.error(`[${route}] ${items.length} exhibitions`);
   for (const item of items) {
-    expositions.push({
-      statut: route,
+    exhibitions.push({
+      status: route,
       ...splitTitle(item.exhibition),
       ...parseDates(item.date),
-      lieux: places(item.areas),
+      locations: toLocations(item.areas),
     });
   }
 }
 
-const json = JSON.stringify(expositions, null, 2);
-await writeFile(new URL("./expositions.json", import.meta.url), json);
+const json = JSON.stringify(exhibitions, null, 2);
+await writeFile(new URL("./kukje.json", import.meta.url), json);
 console.log(json);
