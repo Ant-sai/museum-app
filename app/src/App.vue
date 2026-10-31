@@ -1,17 +1,21 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import ExhibitionCard from "./components/ExhibitionCard.vue";
+import HeartIcon from "./components/HeartIcon.vue";
 import { statusOf, todaySeoul } from "./dates.js";
+import { useFavorites } from "./favorites.js";
 
 const TABS = [
-  { id: "current", label: "En cours" },
-  { id: "upcoming", label: "À venir" },
+  { id: "current", label: "On view" },
+  { id: "upcoming", label: "Upcoming" },
 ];
+const FAVORITES = "favorites"; // special value of the gallery filter
 
 const data = ref(null);
 const error = ref(null);
 const tab = ref("current");
-const gallery = ref(null); // null = all galleries
+const gallery = ref(null); // null = all galleries, FAVORITES, or a gallery id
+const { favorites, isFavorite } = useFavorites();
 
 async function load() {
   error.value = null;
@@ -20,7 +24,7 @@ async function load() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data.value = await res.json();
   } catch (err) {
-    error.value = "Impossible de charger les expositions.";
+    error.value = "Couldn't load exhibitions.";
     console.error(err);
   }
 }
@@ -30,30 +34,42 @@ const galleryNames = computed(() =>
   Object.fromEntries((data.value?.galleries ?? []).map((g) => [g.id, g.name])),
 );
 
+const matchesGallery = (e) => {
+  if (gallery.value === FAVORITES) return isFavorite(e.gallery);
+  return !gallery.value || e.gallery === gallery.value;
+};
+
 const visible = computed(() => {
   const today = todaySeoul();
-  return (data.value?.exhibitions ?? []).filter((e) => {
-    if (gallery.value && e.gallery !== gallery.value) return false;
-    return statusOf(e, today) === tab.value;
-  });
+  return (data.value?.exhibitions ?? []).filter((e) => matchesGallery(e) && statusOf(e, today) === tab.value);
 });
 
-// Current exhibitions closing soonest first; upcoming ones opening soonest first.
+// On view: closing soonest first; upcoming: opening soonest first.
 const sorted = computed(() => {
   const key = tab.value === "current" ? "endDate" : "startDate";
   return [...visible.value].sort((a, b) => (a[key] ?? "9999").localeCompare(b[key] ?? "9999"));
 });
 
+const emptyMessage = computed(() => {
+  if (gallery.value === FAVORITES && !favorites.value.size) {
+    return "No favorite galleries yet. Tap the ♥ next to a gallery name to add it.";
+  }
+  const what = tab.value === "current" ? "on view" : "upcoming";
+  if (gallery.value === FAVORITES) return `No exhibitions ${what} at your favorite galleries.`;
+  if (gallery.value) return `No exhibitions ${what} at ${galleryNames.value[gallery.value]}.`;
+  return `No exhibitions ${what}.`;
+});
+
 const updatedAt = computed(() =>
   data.value?.generatedAt
-    ? new Date(data.value.generatedAt).toLocaleString("fr-FR", { dateStyle: "long", timeStyle: "short" })
+    ? new Date(data.value.generatedAt).toLocaleString("en-GB", { dateStyle: "long", timeStyle: "short" })
     : null,
 );
 </script>
 
 <template>
   <header class="header">
-    <h1 class="header__title">Expos à Séoul</h1>
+    <h1 class="header__title">Seoul Exhibitions</h1>
     <nav class="tabs" role="tablist">
       <button
         v-for="t in TABS"
@@ -68,7 +84,15 @@ const updatedAt = computed(() =>
       </button>
     </nav>
     <div v-if="data" class="chips">
-      <button class="chip" :class="{ 'is-active': !gallery }" @click="gallery = null">Toutes</button>
+      <button class="chip" :class="{ 'is-active': !gallery }" @click="gallery = null">All</button>
+      <button
+        class="chip chip--favorites"
+        :class="{ 'is-active': gallery === FAVORITES }"
+        @click="gallery = gallery === FAVORITES ? null : FAVORITES"
+      >
+        <HeartIcon filled class="chip__heart" />
+        Favorites
+      </button>
       <button
         v-for="g in data.galleries"
         :key="g.id"
@@ -76,6 +100,7 @@ const updatedAt = computed(() =>
         :class="{ 'is-active': gallery === g.id }"
         @click="gallery = gallery === g.id ? null : g.id"
       >
+        <HeartIcon v-if="isFavorite(g.id)" filled class="chip__heart" />
         {{ g.name }}
       </button>
     </div>
@@ -84,20 +109,17 @@ const updatedAt = computed(() =>
   <main class="list">
     <p v-if="error" class="state">
       {{ error }}
-      <button class="retry" @click="load">Réessayer</button>
+      <button class="retry" @click="load">Try again</button>
     </p>
-    <p v-else-if="!data" class="state">Chargement…</p>
-    <p v-else-if="!sorted.length" class="state">
-      Aucune exposition {{ tab === "current" ? "en cours" : "à venir" }}
-      {{ gallery ? `chez ${galleryNames[gallery]}` : "" }}.
-    </p>
+    <p v-else-if="!data" class="state">Loading…</p>
+    <p v-else-if="!sorted.length" class="state">{{ emptyMessage }}</p>
     <ExhibitionCard
       v-for="e in sorted"
       :key="e.url + e.name"
       :exhibition="e"
       :gallery-name="galleryNames[e.gallery] ?? e.gallery"
     />
-    <p v-if="updatedAt" class="updated">Mis à jour le {{ updatedAt }}</p>
+    <p v-if="updatedAt" class="updated">Updated {{ updatedAt }}</p>
   </main>
 </template>
 
@@ -105,7 +127,7 @@ const updatedAt = computed(() =>
 .header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   padding: calc(env(safe-area-inset-top) + 16px) 16px 12px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -150,6 +172,9 @@ const updatedAt = computed(() =>
 }
 .chip {
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 6px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -157,6 +182,10 @@ const updatedAt = computed(() =>
   color: var(--text);
   font: inherit;
   font-size: 14px;
+}
+.chip__heart {
+  color: var(--heart);
+  font-size: 13px;
 }
 .chip.is-active {
   background: var(--text);

@@ -12,9 +12,9 @@ export default defineConfig({
       includeAssets: ["icon.svg"],
       manifest: {
         name: "Seoul Exhibitions",
-        short_name: "Expos",
-        description: "Expositions en cours et à venir dans les galeries de Séoul",
-        lang: "fr",
+        short_name: "Exhibitions",
+        description: "Current and upcoming exhibitions in Seoul galleries",
+        lang: "en",
         theme_color: "#1f1d1a",
         background_color: "#f6f4ef",
         display: "standalone",

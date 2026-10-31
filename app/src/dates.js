@@ -15,27 +15,27 @@ export function statusOf(e, today = todaySeoul()) {
   return e.status;
 }
 
-const fmt = (iso, opts) => new Date(toUtc(iso)).toLocaleDateString("fr-FR", { timeZone: "UTC", ...opts });
+const fmt = (iso, opts) => new Date(toUtc(iso)).toLocaleDateString("en-GB", { timeZone: "UTC", ...opts });
 
-/** "2026-08-28" + "2026-10-31" → "28 août – 31 oct. 2026" */
+/** "2026-08-28" + "2026-10-31" → "28 Aug – 31 Oct 2026" */
 export function formatRange(start, end) {
-  if (!start || !end) return "Dates à confirmer";
+  if (!start || !end) return "Dates TBA";
   const sameYear = start.slice(0, 4) === end.slice(0, 4);
   const from = fmt(start, { day: "numeric", month: "short", ...(sameYear ? {} : { year: "numeric" }) });
   return `${from} – ${fmt(end, { day: "numeric", month: "short", year: "numeric" })}`;
 }
 
-/** Short hint shown on each card: "Dernier jour", "Encore 12 jours", "Dans 3 jours"… */
+/** Short hint shown on each card: "Last day", "12 days left", "Opens in 3 days"… */
 export function countdown(e, today = todaySeoul()) {
   const status = statusOf(e, today);
   if (status === "current" && e.endDate) {
     const left = daysBetween(today, e.endDate);
-    if (left === 0) return "Dernier jour";
-    return left <= 14 ? `Encore ${left} jour${left > 1 ? "s" : ""}` : null;
+    if (left === 0) return "Last day";
+    return left <= 14 ? `${left} day${left > 1 ? "s" : ""} left` : null;
   }
   if (status === "upcoming" && e.startDate) {
     const until = daysBetween(today, e.startDate);
-    return until === 1 ? "Demain" : `Dans ${until} jours`;
+    return until === 1 ? "Opens tomorrow" : `Opens in ${until} days`;
   }
   return null;
 }
