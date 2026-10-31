@@ -6,7 +6,7 @@ Current and upcoming exhibitions in Seoul galleries, as a mobile web app (PWA).
 scrapers/          one script per gallery + build.mjs that merges them
 app/               Vue 3 + Vite PWA
   public/exhibitions.json   data file read by the app (generated)
-.github/workflows/update.yml   daily scrape + GitHub Pages deploy
+.github/workflows/update.yml   daily scrape, commits the data
 ```
 
 ## Galleries
@@ -34,7 +34,15 @@ If a gallery fails, `build.mjs` keeps its previous exhibitions instead of droppi
 
 ## Deployment
 
-The GitHub Action runs every day at 06:00 (Seoul time), on every push to `main`, and on demand.
-It commits the data when exhibitions changed, then deploys `app/dist` to GitHub Pages.
+The app is hosted on Vercel, which rebuilds it on every push to `main`.
+The GitHub Action runs every day at 06:00 (Seoul time), or on demand from the Actions tab,
+and commits `app/public/exhibitions.json` when exhibitions changed, which triggers a Vercel deploy.
 
-One-time setup: **Settings → Pages → Source: GitHub Actions**.
+One-time Vercel setup (import the GitHub repo):
+
+| Setting | Value |
+|---|---|
+| Root Directory | `app` |
+| Framework Preset | Vite |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
