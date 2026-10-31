@@ -1,11 +1,8 @@
 // Fetches current and upcoming PKM Gallery exhibitions.
-// Usage: node pkm.mjs   → writes pkm.json next to the script.
 //
 // The site (Collage/Artlogic platform) has no JSON API, so we read the HTML:
 // 1. /exhibitions lists exhibitions under <h4>Current</h4> / <h4>Upcoming</h4> headers;
 // 2. each detail page has <h1 data-categories="location">artist</h1><h2>title</h2><h3>dates</h3>.
-import { writeFile } from "node:fs/promises";
-
 const BASE = "https://www.pkmgallery.com";
 const STATUSES = { Current: "current", Upcoming: "upcoming" };
 const MONTHS = ["January", "February", "March", "April", "May", "June",
@@ -39,36 +36,36 @@ function parseDates(raw) {
   return { startDate: iso(startYear, m1, d1), endDate: iso(y2, m2, d2) };
 }
 
-// Split /exhibitions by section header and keep links from the Current/Upcoming sections.
-const listing = await getHtml("/exhibitions");
-const sections = listing.split(/<h4>/).slice(1);
-const pending = [];
-for (const section of sections) {
-  const status = STATUSES[section.slice(0, section.indexOf("<")).trim()];
-  if (!status) continue;
-  const body = section.split(/<div class='past'>/)[0]; // the "Past" grid follows directly
-  for (const [, href] of body.matchAll(/<a href=["'](\/exhibitions\/[^"']+)["']/g)) {
-    if (!pending.some((p) => p.href === href)) pending.push({ status, href });
+export async function scrape() {
+  // Split /exhibitions by section header and keep links from the Current/Upcoming sections.
+  const listing = await getHtml("/exhibitions");
+  const sections = listing.split(/<h4>/).slice(1);
+  const pending = [];
+  for (const section of sections) {
+    const status = STATUSES[section.slice(0, section.indexOf("<")).trim()];
+    if (!status) continue;
+    const body = section.split(/<div class='past'>/)[0]; // the "Past" grid follows directly
+    for (const [, href] of body.matchAll(/<a href=["'](\/exhibitions\/[^"']+)["']/g)) {
+      if (!pending.some((p) => p.href === href)) pending.push({ status, href });
+    }
   }
-}
 
-const exhibitions = [];
-for (const { status, href } of pending) {
-  const page = await getHtml(href);
-  const h1 = page.match(/<h1([^>]*)>([\s\S]*?)<\/h1>/);
-  const h2 = page.match(/<h2>([\s\S]*?)<\/h2>/);
-  const h3 = page.match(/<h3>([\s\S]*?)<\/h3>/);
-  const location = text(h1?.[1].match(/data-categories="([^"]*)"/)?.[1]);
-  exhibitions.push({
-    status,
-    name: text(h2?.[1]) || text(h1?.[2]), // h1 = artist, h2 = title (missing for some group shows)
-    ...parseDates(text(h3?.[1])),
-    locations: location ? location.split(/\s*\|\s*/).slice(-1) : [], // "P K M GALLERY | BARTLEBY…" → "BARTLEBY…"
-  });
+  const exhibitions = [];
+  for (const { status, href } of pending) {
+    const page = await getHtml(href);
+    const h1 = page.match(/<h1([^>]*)>([\s\S]*?)<\/h1>/);
+    const h2 = page.match(/<h2>([\s\S]*?)<\/h2>/);
+    const h3 = page.match(/<h3>([\s\S]*?)<\/h3>/);
+    const location = text(h1?.[1].match(/data-categories="([^"]*)"/)?.[1]);
+    // The gallery also lists its yearly programme ("Upcoming Exhibitions in 2026") as an entry.
+    if (/^upcoming exhibitions\b/i.test(text(h1?.[2]))) continue;
+    exhibitions.push({
+      status,
+      name: text(h2?.[1]) || text(h1?.[2]), // h1 = artist, h2 = title (missing for some group shows)
+      ...parseDates(text(h3?.[1])),
+      locations: location ? location.split(/\s*\|\s*/).slice(-1) : [], // "P K M GALLERY | BARTLEBY…" → "BARTLEBY…"
+      url: new URL(href, BASE).toString(),
+    });
+  }
+  return exhibitions;
 }
-
-const count = (s) => exhibitions.filter((e) => e.status === s).length;
-console.error(`[pkm] ${count("current")} current, ${count("upcoming")} upcoming`);
-const json = JSON.stringify(exhibitions, null, 2);
-await writeFile(new URL("./pkm.json", import.meta.url), json);
-console.log(json);

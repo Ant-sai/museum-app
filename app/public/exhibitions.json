@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-10-31T06:30:57.556Z",
+  "galleries": [
+    {
+      "id": "kukje",
+      "name": "Kukje Gallery",
+      "url": "https://www.kukjegallery.com"
+    },
+    {
+      "id": "hyundai",
+      "name": "Gallery Hyundai",
+      "url": "https://www.galleryhyundai.com"
+    },
+    {
+      "id": "whanki",
+      "name": "Whanki Museum",
+      "url": "http://whankimuseum.org"
+    },
+    {
+      "id": "pkm",
+      "name": "PKM Gallery",
+      "url": "https://www.pkmgallery.com"
+    }
+  ],
+  "exhibitions": [
+    {
+      "gallery": "whanki",
+      "status": "current",
+      "name": "Whanki Foundation Collection Exhibition — Collector Kim HyangAn: And Beyond",
+      "startDate": "2026-07-24",
+      "endDate": "2026-12-31",
+      "locations": [
+        "Suhyangsanbang"
+      ],
+      "url": "http://whankimuseum.org/en/exhibitions/%ec%bb%ac%eb%a0%89%ed%84%b0-%ea%b9%80%ed%96%a5%ec%95%88-%ea%b7%b8-%ed%9b%84/"
+    },
+    {
+      "gallery": "whanki",
+      "status": "current",
+      "name": "Whanki Museum Collection Special Exhibition — WHANKI MUSEUM HIGHLIGHTS II",
+      "startDate": "2026-07-24",
+      "endDate": "2026-12-31",
+      "locations": [
+        "Main Building"
+      ],
+      "url": "http://whankimuseum.org/en/exhibitions/%ed%99%98%ea%b8%b0%eb%af%b8%ec%88%a0%ea%b4%80-%ed%95%98%ec%9d%b4%eb%9d%bc%ec%9d%b4%ed%8a%b8-ii/"
+    },
+    {
+      "gallery": "kukje",
+      "status": "current",
+      "name": "Post Ritual Bodies",
+      "nameKo": "제의를 품은 신체들",
+      "startDate": "2026-08-28",
+      "endDate": "2026-11-14",
+      "locations": [
+        "Busan"
+      ],
+      "url": "https://www.kukjegallery.com/exhibitions/view?seq=297"
+    },
+    {
+      "gallery": "hyundai",
+      "status": "current",
+      "name": "Meditation: Myth and Memory",
+      "startDate": "2026-09-10",
+      "endDate": "2026-11-28",
+      "locations": [
+        "New York Project Space"
+      ],
+      "url": "https://www.galleryhyundai.com/exhibition/view/16"
+    },
+    {
+      "gallery": "hyundai",
+      "status": "current",
+      "name": "(no)thing",
+      "startDate": "2026-10-29",
+      "endDate": "2026-12-20",
+      "locations": [
+        "Gallery Hyundai"
+      ],
+      "url": "https://www.galleryhyundai.com/exhibition/view/18"
+    },
+    {
+      "gallery": "hyundai",
+      "status": "upcoming",
+      "name": "IMAGINATIO",
+      "startDate": "2026-11-11",
+      "endDate": "2026-12-27",
+      "locations": [
+        "Hyundai Hwarang"
+      ],
+      "url": "https://www.galleryhyundai.com/exhibition/view/17"
+    },
+    {
+      "gallery": "pkm",
+      "status": "upcoming",
+      "name": "Floating I",
+      "startDate": "2026-11-13",
+      "endDate": "2026-12-30",
+      "locations": [
+        "PKM Gallery"
+      ],
+      "url": "https://www.pkmgallery.com/exhibitions/young-do-jeong3"
+    },
+    {
+      "gallery": "kukje",
+      "status": "upcoming",
+      "name": "BLANK",
+      "startDate": "2026-11-19",
+      "endDate": "2027-01-31",
+      "locations": [
+        "Seoul Hanok"
+      ],
+      "url": "https://www.kukjegallery.com/exhibitions/view?seq=298"
+    },
+    {
+      "gallery": "kukje",
+      "status": "upcoming",
+      "name": "Stems and Nodes",
+      "nameKo": "줄기와 마디",
+      "startDate": "2026-11-19",
+      "endDate": "2027-01-31",
+      "locations": [
+        "Seoul K1",
+        "Seoul K2"
+      ],
+      "url": "https://www.kukjegallery.com/exhibitions/view?seq=299"
+    }
+  ]
+}

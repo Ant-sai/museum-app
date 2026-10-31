@@ -1,0 +1,66 @@
+# Every day: scrape the galleries, commit the data if it changed,
+# then build the PWA and deploy it to GitHub Pages.
+name: Update exhibitions and deploy
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 06:00 in Seoul
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Scrape galleries
+        run: node scrapers/build.mjs
+
+      - name: Commit data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/public/exhibitions.json
+          # generatedAt changes on every run: only commit when the exhibitions themselves changed.
+          if git diff --cached -U0 | grep -E '^[+-] ' | grep -vq '"generatedAt"'; then
+            git commit -m "Update exhibitions data"
+            git push
+          else
+            git reset -q
+          fi
+
+      - name: Build app
+        working-directory: app
+        run: |
+          npm ci
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

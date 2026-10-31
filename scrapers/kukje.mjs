@@ -1,9 +1,7 @@
-// Fetches Kukje Gallery exhibitions from its JSON API.
-// Usage: node kukje.mjs   → writes kukje.json next to the script.
-import { writeFile } from "node:fs/promises";
-
-const API = "https://www.kukjegallery.com/api/exhibitions";
-const ROUTES = ["current", "upcoming", "past"];
+// Fetches current and upcoming Kukje Gallery exhibitions from its JSON API.
+const SITE = "https://www.kukjegallery.com";
+const API = `${SITE}/api/exhibitions`;
+const ROUTES = ["current", "upcoming"];
 const MONTHS = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
@@ -59,20 +57,19 @@ function parseDates(raw) {
 // [{areaTitle:"Seoul", areaItems:"K1"}, …] → ["Seoul K1", …]
 const toLocations = (areas) => areas.map((a) => [a.areaTitle, a.areaItems].filter(Boolean).join(" "));
 
-const exhibitions = [];
-for (const route of ROUTES) {
-  const items = await getAll(route);
-  console.error(`[${route}] ${items.length} exhibitions`);
-  for (const item of items) {
-    exhibitions.push({
-      status: route,
-      ...splitTitle(item.exhibition),
-      ...parseDates(item.date),
-      locations: toLocations(item.areas),
-    });
+export async function scrape() {
+  const exhibitions = [];
+  for (const route of ROUTES) {
+    for (const item of await getAll(route)) {
+      exhibitions.push({
+        status: route,
+        ...splitTitle(item.exhibition),
+        ...parseDates(item.date),
+        locations: toLocations(item.areas),
+        // Some exhibitions have no detail page (url = "javascript:void(0);").
+        url: item.url.startsWith("/") ? SITE + item.url : `${SITE}/exhibitions`,
+      });
+    }
   }
+  return exhibitions;
 }
-
-const json = JSON.stringify(exhibitions, null, 2);
-await writeFile(new URL("./kukje.json", import.meta.url), json);
-console.log(json);

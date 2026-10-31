@@ -1,10 +1,7 @@
 // Fetches current and upcoming Whanki Museum exhibitions (WordPress).
-// Usage: node whanki.mjs   → writes whanki.json next to the script.
 //
 // The WordPress REST API provides the list, status and location, but not the dates:
 // those only appear on each exhibition page (the "전시기간" block).
-import { writeFile } from "node:fs/promises";
-
 const WP = "http://whankimuseum.org/wp-json/wp/v2";
 // exhibition_category taxonomy terms (English version of the site).
 const STATUSES = { 198: "current", 194: "upcoming" };
@@ -30,27 +27,24 @@ function parseDates(html) {
   return { startDate: iso(m[1], m[2], m[3]), endDate: iso(m[4], m[5], m[6]) };
 }
 
-const fields = "_fields=id,title,link,exhibition_category,exhibition_location";
-const items = await get(`${WP}/exhibitions?exhibition_category=${Object.keys(STATUSES)}&per_page=100&${fields}`);
+export async function scrape() {
+  const fields = "_fields=id,title,link,exhibition_category,exhibition_location";
+  const items = await get(`${WP}/exhibitions?exhibition_category=${Object.keys(STATUSES)}&per_page=100&${fields}`);
 
-const locationIds = [...new Set(items.flatMap((e) => e.exhibition_location))];
-const locationNames = locationIds.length
-  ? Object.fromEntries((await get(`${WP}/exhibition_location?include=${locationIds}&_fields=id,name`)).map((t) => [t.id, t.name]))
-  : {};
+  const locationIds = [...new Set(items.flatMap((e) => e.exhibition_location))];
+  const locationNames = locationIds.length
+    ? Object.fromEntries((await get(`${WP}/exhibition_location?include=${locationIds}&_fields=id,name`)).map((t) => [t.id, t.name]))
+    : {};
 
-const exhibitions = [];
-for (const e of items) {
-  exhibitions.push({
-    status: STATUSES[e.exhibition_category.find((c) => STATUSES[c])],
-    name: decode(e.title.rendered),
-    ...parseDates(await get(e.link, "text")),
-    locations: e.exhibition_location.map((id) => decode(locationNames[id] ?? "")).filter(Boolean),
-  });
+  const exhibitions = [];
+  for (const e of items) {
+    exhibitions.push({
+      status: STATUSES[e.exhibition_category.find((c) => STATUSES[c])],
+      name: decode(e.title.rendered),
+      ...parseDates(await get(e.link, "text")),
+      locations: e.exhibition_location.map((id) => decode(locationNames[id] ?? "")).filter(Boolean),
+      url: e.link,
+    });
+  }
+  return exhibitions;
 }
-exhibitions.sort((a, b) => (a.startDate ?? "").localeCompare(b.startDate ?? ""));
-
-const count = (s) => exhibitions.filter((e) => e.status === s).length;
-console.error(`[whanki] ${count("current")} current, ${count("upcoming")} upcoming`);
-const json = JSON.stringify(exhibitions, null, 2);
-await writeFile(new URL("./whanki.json", import.meta.url), json);
-console.log(json);
