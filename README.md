@@ -19,7 +19,8 @@ app/               Vue 3 + Vite PWA
 | PKM Gallery | HTML (no API) |
 
 To add a gallery: create `scrapers/<id>.mjs` exporting `scrape()` that returns
-`{ status, name, nameKo?, startDate, endDate, locations, url }[]`, then register it in `scrapers/build.mjs`.
+`{ status, name, nameKo?, startDate, endDate, locations, image?, url }[]`, then register it in `scrapers/build.mjs`.
+`image` should be the gallery's official exhibition image URL when available.
 
 ## Development
 

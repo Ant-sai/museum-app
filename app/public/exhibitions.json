@@ -32,7 +32,8 @@
       "locations": [
         "Suhyangsanbang"
       ],
-      "url": "http://whankimuseum.org/en/exhibitions/%ec%bb%ac%eb%a0%89%ed%84%b0-%ea%b9%80%ed%96%a5%ec%95%88-%ea%b7%b8-%ed%9b%84/"
+      "image": "http://whankimuseum.org/wp-content/uploads/2026/07/KakaoTalk_20260723_204448245.jpg",
+      "url": "http://whankimuseum.org/en/exhibitions/%ec%bb%ac%eb%a0%89%ed%84%b0-%ea%b9%80%ed%96%A5%ec%95%88-%ea%b7%b8-%ed%9b%84/"
     },
     {
       "gallery": "whanki",
@@ -43,6 +44,7 @@
       "locations": [
         "Main Building"
       ],
+      "image": "http://whankimuseum.org/wp-content/uploads/2026/07/KakaoTalk_20260723_204646979-960x1024.jpg",
       "url": "http://whankimuseum.org/en/exhibitions/%ed%99%98%ea%b8%b0%eb%af%b8%ec%88%a0%ea%b4%80-%ed%95%98%ec%9d%b4%eb%9d%bc%ec%9d%b4%ed%8a%b8-ii/"
     },
     {
@@ -55,6 +57,7 @@
       "locations": [
         "Busan"
       ],
+      "image": "https://www.kukjegallery.com/upload/exhibitions/9028a3a2580e1da75a9c675daa5317c0_thumb_2000x484.jpg",
       "url": "https://www.kukjegallery.com/exhibitions/view?seq=297"
     },
     {
@@ -66,6 +69,7 @@
       "locations": [
         "New York Project Space"
       ],
+      "image": "https://www.galleryhyundai.com/public/2026/09/1/11/36/21/b7f9b9d4-d73e-423b-a62b-45cccd0747f5.resize_large.png",
       "url": "https://www.galleryhyundai.com/exhibition/view/16"
     },
     {
@@ -77,6 +81,7 @@
       "locations": [
         "Gallery Hyundai"
       ],
+      "image": "https://www.galleryhyundai.com/public/2026/10/22/15/11/22/1990ed3c-b554-4f9a-b161-a3b630f51b16.resize_large.jpg",
       "url": "https://www.galleryhyundai.com/exhibition/view/18"
     },
     {
@@ -88,6 +93,7 @@
       "locations": [
         "Hyundai Hwarang"
       ],
+      "image": "https://www.galleryhyundai.com/public/2026/10/22/12/3/54/8abf1811-f5d4-447a-947a-e789f2c05982.resize_large.jpg",
       "url": "https://www.galleryhyundai.com/exhibition/view/17"
     },
     {
@@ -99,6 +105,7 @@
       "locations": [
         "PKM Gallery"
       ],
+      "image": "https://static-assets.artlogic.net/w_680,h_500,c_lfill/exhibit-e/5d5eccf1a5aa2ced538b4567/c66f0c6ae115bfcb11ad3ef7d8ec0cfb.jpeg",
       "url": "https://www.pkmgallery.com/exhibitions/young-do-jeong3"
     },
     {
@@ -110,6 +117,7 @@
       "locations": [
         "Seoul Hanok"
       ],
+      "image": "https://www.kukjegallery.com/upload/exhibitions/bf03c8d9a9acef40b5d738da2f5f8c85_thumb_1600x484.jpg",
       "url": "https://www.kukjegallery.com/exhibitions/view?seq=298"
     },
     {
@@ -123,6 +131,7 @@
         "Seoul K1",
         "Seoul K2"
       ],
+      "image": "https://www.kukjegallery.com/upload/exhibitions/087a9133de676ea4a9bb8a4a798b0cea_thumb_1600x484.jpg",
       "url": "https://www.kukjegallery.com/exhibitions/view?seq=299"
     }
   ]
