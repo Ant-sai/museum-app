@@ -26,6 +26,7 @@ export async function scrape() {
         startDate,
         endDate: e.endDt?.slice(0, 10),
         locations: (e.exbiPlaceList ?? []).map((p) => p.exbiPlaceNm),
+        image: e.exbiImage?.trlpth ? new URL(`/public${e.exbiImage.trlpth}`, SITE).toString() : undefined,
         url: `${SITE}/exhibition/view/${e.exbiSn}`,
       };
     })

@@ -28,8 +28,8 @@ function parseDates(html) {
 }
 
 export async function scrape() {
-  const fields = "_fields=id,title,link,exhibition_category,exhibition_location";
-  const items = await get(`${WP}/exhibitions?exhibition_category=${Object.keys(STATUSES)}&per_page=100&${fields}`);
+  const fields = "_fields=id,title,link,exhibition_category,exhibition_location,yoast_head_json,_embedded";
+  const items = await get(`${WP}/exhibitions?exhibition_category=${Object.keys(STATUSES)}&per_page=100&_embed&${fields}`);
 
   const locationIds = [...new Set(items.flatMap((e) => e.exhibition_location))];
   const locationNames = locationIds.length
@@ -43,6 +43,7 @@ export async function scrape() {
       name: decode(e.title.rendered),
       ...parseDates(await get(e.link, "text")),
       locations: e.exhibition_location.map((id) => decode(locationNames[id] ?? "")).filter(Boolean),
+      image: e.yoast_head_json?.og_image?.[0]?.url ?? e._embedded?.["wp:featuredmedia"]?.[0]?.source_url,
       url: e.link,
     });
   }

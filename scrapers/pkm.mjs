@@ -45,13 +45,16 @@ export async function scrape() {
     const status = STATUSES[section.slice(0, section.indexOf("<")).trim()];
     if (!status) continue;
     const body = section.split(/<div class='past'>/)[0]; // the "Past" grid follows directly
-    for (const [, href] of body.matchAll(/<a href=["'](\/exhibitions\/[^"']+)["']/g)) {
-      if (!pending.some((p) => p.href === href)) pending.push({ status, href });
+    for (const [, href, card] of body.matchAll(/<a href=["'](\/exhibitions\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/g)) {
+      if (!pending.some((p) => p.href === href)) {
+        const image = card.match(/<img\b[^>]*\bsrc=["']([^"']+)["']/i)?.[1];
+        pending.push({ status, href, image: image ? new URL(image, BASE).toString() : undefined });
+      }
     }
   }
 
   const exhibitions = [];
-  for (const { status, href } of pending) {
+  for (const { status, href, image } of pending) {
     const page = await getHtml(href);
     const h1 = page.match(/<h1([^>]*)>([\s\S]*?)<\/h1>/);
     const h2 = page.match(/<h2>([\s\S]*?)<\/h2>/);
@@ -64,6 +67,7 @@ export async function scrape() {
       name: text(h2?.[1]) || text(h1?.[2]), // h1 = artist, h2 = title (missing for some group shows)
       ...parseDates(text(h3?.[1])),
       locations: location ? location.split(/\s*\|\s*/).slice(-1) : [], // "P K M GALLERY | BARTLEBY…" → "BARTLEBY…"
+      image,
       url: new URL(href, BASE).toString(),
     });
   }

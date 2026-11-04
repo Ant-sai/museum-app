@@ -25,6 +25,15 @@ export function formatRange(start, end) {
   return `${from} – ${fmt(end, { day: "numeric", month: "short", year: "numeric" })}`;
 }
 
+export function formatCardRange(start, end) {
+  if (!start || !end) return "Dates TBA";
+  const compact = (iso) => `${iso.slice(0, 4)}.${iso.slice(5, 7)}.${iso.slice(8, 10)}`;
+  const finish = start.slice(0, 4) === end.slice(0, 4)
+    ? `${end.slice(5, 7)}.${end.slice(8, 10)}`
+    : compact(end);
+  return `${compact(start)} — ${finish}`;
+}
+
 /** Short hint shown on each card: "Last day", "12 days left", "Opens in 3 days"… */
 export function countdown(e, today = todaySeoul()) {
   const status = statusOf(e, today);

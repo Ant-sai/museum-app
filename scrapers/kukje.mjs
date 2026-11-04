@@ -66,6 +66,7 @@ export async function scrape() {
         ...splitTitle(item.exhibition),
         ...parseDates(item.date),
         locations: toLocations(item.areas),
+        image: item.image ? new URL(item.image, SITE).toString() : undefined,
         // Some exhibitions have no detail page (url = "javascript:void(0);").
         url: item.url.startsWith("/") ? SITE + item.url : `${SITE}/exhibitions`,
       });
