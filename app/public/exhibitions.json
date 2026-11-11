@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T01:20:32.157Z",
+  "generatedAt": "2026-11-11T01:04:47.459Z",
   "galleries": [
     {
       "id": "kukje",
@@ -86,7 +86,7 @@
     },
     {
       "gallery": "hyundai",
-      "status": "upcoming",
+      "status": "current",
       "name": "IMAGINATIO",
       "startDate": "2026-11-11",
       "endDate": "2026-12-27",
