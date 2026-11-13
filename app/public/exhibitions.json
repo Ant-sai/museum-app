@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T01:04:47.459Z",
+  "generatedAt": "2026-11-13T01:42:41.308Z",
   "galleries": [
     {
       "id": "kukje",
@@ -95,18 +95,6 @@
       ],
       "image": "https://www.galleryhyundai.com/public/2026/10/22/12/3/54/8abf1811-f5d4-447a-947a-e789f2c05982.resize_large.jpg",
       "url": "https://www.galleryhyundai.com/exhibition/view/17"
-    },
-    {
-      "gallery": "pkm",
-      "status": "upcoming",
-      "name": "Floating I",
-      "startDate": "2026-11-13",
-      "endDate": "2026-12-30",
-      "locations": [
-        "PKM Gallery"
-      ],
-      "image": "https://static-assets.artlogic.net/w_680,h_500,c_lfill/exhibit-e/5d5eccf1a5aa2ced538b4567/c66f0c6ae115bfcb11ad3ef7d8ec0cfb.jpeg",
-      "url": "https://www.pkmgallery.com/exhibitions/young-do-jeong3"
     },
     {
       "gallery": "kukje",
