@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T01:42:41.308Z",
+  "generatedAt": "2026-11-15T00:49:54.381Z",
   "galleries": [
     {
       "id": "kukje",
@@ -46,19 +46,6 @@
       ],
       "image": "http://whankimuseum.org/wp-content/uploads/2026/07/KakaoTalk_20260723_204646979-960x1024.jpg",
       "url": "http://whankimuseum.org/en/exhibitions/%ed%99%98%ea%b8%b0%eb%af%b8%ec%88%a0%ea%b4%80-%ed%95%98%ec%9d%b4%eb%9d%bc%ec%9d%b4%ed%8a%b8-ii/"
-    },
-    {
-      "gallery": "kukje",
-      "status": "current",
-      "name": "Post Ritual Bodies",
-      "nameKo": "제의를 품은 신체들",
-      "startDate": "2026-08-28",
-      "endDate": "2026-11-14",
-      "locations": [
-        "Busan"
-      ],
-      "image": "https://www.kukjegallery.com/upload/exhibitions/9028a3a2580e1da75a9c675daa5317c0_thumb_2000x484.jpg",
-      "url": "https://www.kukjegallery.com/exhibitions/view?seq=297"
     },
     {
       "gallery": "hyundai",
