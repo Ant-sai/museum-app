@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T00:49:54.381Z",
+  "generatedAt": "2026-11-19T02:19:58.727Z",
   "galleries": [
     {
       "id": "kukje",
@@ -85,7 +85,7 @@
     },
     {
       "gallery": "kukje",
-      "status": "upcoming",
+      "status": "current",
       "name": "BLANK",
       "startDate": "2026-11-19",
       "endDate": "2027-01-31",
@@ -97,7 +97,7 @@
     },
     {
       "gallery": "kukje",
-      "status": "upcoming",
+      "status": "current",
       "name": "Stems and Nodes",
       "nameKo": "줄기와 마디",
       "startDate": "2026-11-19",
