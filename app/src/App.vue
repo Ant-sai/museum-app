@@ -54,6 +54,6 @@ onMounted(load);
   min-height: 100vh;
   /* Leave room for the fixed bottom navigation. */
   padding-bottom: calc(72px + env(safe-area-inset-bottom));
-  background: var(--bg);
+  background: var(--color-bg);
 }
 </style>

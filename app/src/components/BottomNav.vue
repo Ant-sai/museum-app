@@ -23,20 +23,16 @@ const ITEMS = [
       >
         <svg v-if="item.id === 'explore'" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4 7v10M7.5 5v14" />
-          <rect x="11" y="3" width="9.5" height="18" rx="2" />
+          <rect x="11" y="3" width="9.5" height="18" rx="1" />
         </svg>
         <svg v-else-if="item.id === 'calendar'" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
-          <path d="M8 3v4M16 3v4M3.5 10h17" />
-          <g class="dots">
-            <circle cx="8.5" cy="13.5" r=".6" /><circle cx="12" cy="13.5" r=".6" /><circle cx="15.5" cy="13.5" r=".6" />
-            <circle cx="8.5" cy="17" r=".6" /><circle cx="12" cy="17" r=".6" /><circle cx="15.5" cy="17" r=".6" />
-          </g>
+          <rect x="3.5" y="5" width="17" height="15.5" rx="1" />
+          <path d="M8 3v4M16 3v4M3.5 10h17M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01" />
         </svg>
         <svg v-else viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 6.5C10 5 7 4.6 3.5 5v14c3.5-.4 6.5 0 8.5 1.5 2-1.5 5-1.9 8.5-1.5V5C17 4.6 14 5 12 6.5zM12 6.5v14" />
         </svg>
-        <span>{{ item.label }}</span>
+        <span class="bottom-nav__label">{{ item.label }}</span>
       </button>
     </div>
   </nav>
@@ -50,8 +46,8 @@ const ITEMS = [
   bottom: 0;
   left: 0;
   padding-bottom: env(safe-area-inset-bottom);
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  border-top: var(--rule);
+  background: var(--color-bg);
 }
 .bottom-nav__inner {
   display: grid;
@@ -60,36 +56,48 @@ const ITEMS = [
   margin: 0 auto;
 }
 .bottom-nav__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 10px 4px 8px;
+  gap: 6px;
+  padding: 12px 4px 10px;
   border: 0;
   background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 13px;
+  color: var(--color-text-subtle);
+  transition: color var(--duration) var(--ease);
 }
 .bottom-nav__item svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.7;
+  stroke-width: 1.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.bottom-nav__item .dots {
-  fill: currentColor;
+.bottom-nav__label {
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 .bottom-nav__item.is-active {
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--color-text);
+}
+/* Brass rule above the active tab: a detail, the slate label carries the state. */
+.bottom-nav__item.is-active::before {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 32px;
+  height: 1px;
+  background: var(--color-brass);
+  content: "";
+  transform: translateX(-50%);
 }
 .bottom-nav__item:focus-visible {
-  outline: 2px solid var(--accent);
   outline-offset: -4px;
-  border-radius: 8px;
 }
 </style>

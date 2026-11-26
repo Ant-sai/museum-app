@@ -11,8 +11,8 @@ const props = defineProps({
 defineEmits(["retry"]);
 
 const TABS = [
-  { id: "current", label: "Current Exhibitions" },
-  { id: "upcoming", label: "Upcoming Exhibitions" },
+  { id: "current", label: "Current" },
+  { id: "upcoming", label: "Upcoming" },
 ];
 const SAVED = "saved"; // special value of the gallery filter
 
@@ -73,9 +73,9 @@ const updatedAt = computed(() =>
   <div class="page">
     <header class="header">
       <div class="header__brand-row">
-        <h1 class="header__title">The Moment of Exhibition</h1>
+        <h1 class="header__title caps">The Moment of Exhibition</h1>
         <button
-          class="search-toggle"
+          class="icon-btn"
           type="button"
           :aria-label="searchOpen ? 'Close search' : 'Search exhibitions'"
           :aria-expanded="searchOpen"
@@ -92,8 +92,8 @@ const updatedAt = computed(() =>
         <input v-model="query" type="search" placeholder="Search exhibitions or galleries" autofocus />
       </label>
 
-      <p v-if="tab === 'upcoming'" class="eyebrow">THE NEXT CHAPTER</p>
-      <h2 class="intro__title" :class="{ 'intro__title--current': tab === 'current' }">
+      <p v-if="tab === 'upcoming'" class="eyebrow label">The next chapter</p>
+      <h2 class="intro__title caps" :class="{ 'intro__title--current': tab === 'current' }">
         {{ tab === "current" ? "What moments will I encounter today?" : "Soon, a new scene unfolds." }}
       </h2>
       <p class="intro__copy">
@@ -108,7 +108,7 @@ const updatedAt = computed(() =>
         <button
           v-for="t in TABS"
           :key="t.id"
-          class="tabs__tab"
+          class="tabs__tab caps"
           :class="{ 'is-active': tab === t.id }"
           role="tab"
           :aria-selected="tab === t.id"
@@ -118,13 +118,16 @@ const updatedAt = computed(() =>
         </button>
       </nav>
       <div v-if="data" class="chips" aria-label="Filter by gallery">
-        <button class="chip" :class="{ 'is-active': !gallery }" @click="gallery = null">All galleries</button>
+        <button class="chip" :class="{ 'is-active': !gallery }" :aria-pressed="!gallery" @click="gallery = null">
+          All galleries
+        </button>
         <button
           class="chip"
           :class="{ 'is-active': gallery === SAVED }"
+          :aria-pressed="gallery === SAVED"
           @click="gallery = gallery === SAVED ? null : SAVED"
         >
-          <svg class="chip__save" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="chip__icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6 3.75h12a1 1 0 0 1 1 1v16l-7-4.5-7 4.5v-16a1 1 0 0 1 1-1z" />
           </svg>
           Saved
@@ -134,6 +137,7 @@ const updatedAt = computed(() =>
           :key="g.id"
           class="chip"
           :class="{ 'is-active': gallery === g.id }"
+          :aria-pressed="gallery === g.id"
           @click="gallery = gallery === g.id ? null : g.id"
         >
           {{ g.name }}
@@ -142,10 +146,10 @@ const updatedAt = computed(() =>
     </header>
 
     <main class="list" aria-live="polite">
-      <p v-if="error" class="state">
-        {{ error }}
-        <button class="retry" @click="$emit('retry')">Try again</button>
-      </p>
+      <div v-if="error" class="state">
+        <p>{{ error }}</p>
+        <button class="btn" type="button" @click="$emit('retry')">Try again</button>
+      </div>
       <p v-else-if="!data" class="state">Loading…</p>
       <p v-else-if="!sorted.length" class="state">{{ emptyMessage }}</p>
       <ExhibitionCard
@@ -154,7 +158,7 @@ const updatedAt = computed(() =>
         :exhibition="e"
         :gallery-name="galleryNames[e.gallery] ?? e.gallery"
       />
-      <p v-if="updatedAt" class="updated">Updated {{ updatedAt }}</p>
+      <p v-if="updatedAt" class="updated label">Updated {{ updatedAt }}</p>
     </main>
   </div>
 </template>
@@ -165,7 +169,7 @@ const updatedAt = computed(() =>
   margin: 0 auto;
 }
 .header {
-  padding: calc(env(safe-area-inset-top) + 24px) 20px 0;
+  padding: calc(env(safe-area-inset-top) + 32px) 24px 0;
 }
 .header__brand-row {
   display: flex;
@@ -175,100 +179,95 @@ const updatedAt = computed(() =>
 }
 .header__title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 6vw, 32px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  font-size: 13px;
+  letter-spacing: 0.18em;
 }
-.search-toggle {
+.icon-btn {
   display: grid;
   flex: 0 0 40px;
   width: 40px;
   height: 40px;
+  margin-right: -8px;
   place-items: center;
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--radius);
   background: transparent;
-  color: var(--text);
+  color: var(--color-text);
 }
-.search-toggle svg {
-  width: 26px;
+.icon-btn svg {
+  width: 22px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.4;
 }
 .search-field {
   display: block;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 .search-field input {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-text);
+  border-radius: 0;
+  background: transparent;
+  outline: none;
+}
+.search-field input::placeholder {
+  color: var(--color-text-subtle);
 }
 .eyebrow {
-  margin: 30px 0 10px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  margin: 56px 0 12px;
+  text-transform: uppercase;
 }
 .intro__title {
   max-width: 470px;
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 8vw, 42px);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -0.035em;
+  font-size: clamp(20px, 5.4vw, 26px);
+  line-height: 1.4;
+  letter-spacing: 0.12em;
 }
 .intro__title--current {
-  margin-top: 30px;
+  margin-top: 56px;
 }
 .intro__copy {
-  margin: 14px 0 30px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.55;
+  max-width: 420px;
+  margin: 16px 0 48px;
+  color: var(--color-text-muted);
+  font-size: 15px;
 }
 .tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 28px;
+  border-bottom: var(--rule);
 }
 .tabs__tab {
   position: relative;
   padding: 12px 0 14px;
   border: 0;
   background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 15px;
-  font-weight: 500;
+  color: var(--color-text-subtle);
+  font-size: 11px;
   text-align: left;
+  transition: color var(--duration) var(--ease);
 }
 .tabs__tab.is-active {
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--color-text);
 }
 .tabs__tab.is-active::after {
   position: absolute;
   right: 0;
   bottom: -1px;
   left: 0;
-  height: 2px;
-  background: var(--accent);
+  height: 1px;
+  background: var(--color-brass);
   content: "";
 }
 .chips {
   display: flex;
-  gap: 7px;
-  margin: 12px -20px 0;
-  padding: 0 20px 3px;
+  gap: 8px;
+  margin: 20px -24px 0;
+  padding: 0 24px 2px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -279,76 +278,58 @@ const updatedAt = computed(() =>
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  gap: 6px;
+  padding: 7px 10px;
+  border: var(--rule);
+  border-radius: var(--radius);
   background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 12px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease);
 }
-.chip__save {
-  width: 12px;
+.chip__icon {
+  width: 11px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.6;
   stroke-linejoin: round;
 }
 .chip.is-active {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--color-text);
+  color: var(--color-text);
 }
 .list {
   display: grid;
-  gap: 26px;
-  padding: 24px 20px 32px;
+  padding: 16px 24px 40px;
 }
 .state {
-  margin: 64px 0;
-  text-align: center;
-  color: var(--muted);
+  margin: 56px 0;
+  color: var(--color-text-muted);
 }
-.retry {
-  display: block;
-  margin: 12px auto 0;
-  padding: 9px 16px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
+.state p {
+  margin: 0 0 20px;
 }
 .updated {
-  margin: 0;
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  margin: 32px 0 0;
 }
 @media (min-width: 700px) {
   .header {
-    padding-right: 28px;
-    padding-left: 28px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
   .chips {
-    margin-right: -28px;
-    margin-left: -28px;
-    padding-right: 28px;
-    padding-left: 28px;
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
   .list {
-    padding-right: 28px;
-    padding-left: 28px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 }
 </style>

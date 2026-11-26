@@ -87,8 +87,8 @@ function goToday() {
 <template>
   <div class="page">
     <header class="header">
-      <h1 class="title">Calendar</h1>
-      <p class="copy">Openings and closings at a glance.</p>
+      <h1 class="title caps">Calendar</h1>
+      <p class="copy">Openings and closings by day.</p>
     </header>
 
     <section class="calendar" aria-label="Exhibition calendar">
@@ -96,7 +96,7 @@ function goToday() {
         <button class="nav-btn" type="button" aria-label="Previous month" @click="shiftMonth(-1)">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
         </button>
-        <h2 class="calendar__month">{{ monthLabel }}</h2>
+        <h2 class="calendar__month caps">{{ monthLabel }}</h2>
         <button class="nav-btn" type="button" aria-label="Next month" @click="shiftMonth(1)">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
         </button>
@@ -125,18 +125,18 @@ function goToday() {
       </div>
 
       <div class="calendar__foot">
-        <span class="legend"><span class="dot dot--opening" /> Opening</span>
-        <span class="legend"><span class="dot dot--closing" /> Closing</span>
-        <button v-if="selected !== today" class="today-btn" type="button" @click="goToday">Today</button>
+        <span class="legend label"><span class="dot dot--opening" /> Opening</span>
+        <span class="legend label"><span class="dot dot--closing" /> Closing</span>
+        <button v-if="selected !== today" class="btn btn--accent today-btn" type="button" @click="goToday">Today</button>
       </div>
     </section>
 
     <section class="day-list" aria-live="polite">
-      <h2 class="day-list__title">{{ selectedLabel }}</h2>
-      <p v-if="error" class="state">
-        {{ error }}
-        <button class="retry" @click="$emit('retry')">Try again</button>
-      </p>
+      <h2 class="day-list__title caps">{{ selectedLabel }}</h2>
+      <div v-if="error" class="state">
+        <p>{{ error }}</p>
+        <button class="btn" type="button" @click="$emit('retry')">Try again</button>
+      </div>
       <p v-else-if="!data" class="state">Loading…</p>
       <p v-else-if="!onView.length" class="state">No exhibitions on view this day.</p>
       <a
@@ -151,9 +151,9 @@ function goToday() {
           <img v-if="e.image" :src="e.image" alt="" loading="lazy" decoding="async" />
         </span>
         <span class="row__body">
-          <span class="row__gallery">{{ galleryNames[e.gallery] ?? e.gallery }}</span>
+          <span class="row__gallery label">{{ galleryNames[e.gallery] ?? e.gallery }}</span>
           <span class="row__name">{{ e.name }}</span>
-          <span class="row__meta">
+          <span class="row__meta label">
             <span v-if="badge(e)" class="row__badge">{{ badge(e) }}</span>
             {{ formatCardRange(e.startDate, e.endDate) }}
           </span>
@@ -167,38 +167,33 @@ function goToday() {
 .page {
   max-width: 640px;
   margin: 0 auto;
-  padding: calc(env(safe-area-inset-top) + 24px) 20px 32px;
+  padding: calc(env(safe-area-inset-top) + 32px) 24px 40px;
 }
 .title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 6vw, 32px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  font-size: 13px;
+  letter-spacing: 0.18em;
 }
 .copy {
-  margin: 8px 0 0;
-  color: var(--muted);
+  margin: 12px 0 0;
+  color: var(--color-text-muted);
   font-size: 15px;
 }
 .calendar {
-  margin-top: 24px;
-  padding: 16px 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--surface);
+  margin-top: 40px;
+  padding: 20px 12px 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
 }
 .calendar__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 .calendar__month {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 12px;
 }
 .nav-btn {
   display: grid;
@@ -206,127 +201,119 @@ function goToday() {
   height: 40px;
   place-items: center;
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--radius);
   background: transparent;
-  color: var(--text);
+  color: var(--color-text);
 }
 .nav-btn svg {
-  width: 20px;
+  width: 18px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  stroke-width: 1.4;
+  stroke-linecap: square;
 }
 .calendar__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  row-gap: 2px;
+  row-gap: 4px;
 }
 .calendar__weekday {
-  padding-bottom: 6px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
+  padding-bottom: 8px;
+  color: var(--color-text-muted); /* muted, not subtle: AA on the surface colour */
+  font-family: var(--font-mono);
+  font-size: 11px;
   text-align: center;
 }
 .day {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  min-height: 46px;
-  padding: 4px 0;
+  gap: 4px;
+  min-height: 48px;
+  padding: 2px 0;
   border: 0;
   background: transparent;
-  color: var(--text);
-  font: inherit;
+  color: var(--color-text);
 }
 .day__number {
   display: grid;
   width: 32px;
   height: 32px;
   place-items: center;
-  border-radius: 50%;
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  transition: background-color var(--duration) var(--ease), color var(--duration) var(--ease);
 }
 .day.is-today .day__number {
-  box-shadow: inset 0 0 0 1.5px var(--accent);
-  color: var(--accent);
-  font-weight: 700;
+  border-color: var(--color-text);
 }
 .day.is-selected .day__number {
-  background: var(--accent);
-  box-shadow: none;
-  color: var(--surface);
-  font-weight: 700;
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
 }
 .day__dots {
   display: flex;
-  gap: 3px;
-  height: 6px;
+  gap: 4px;
+  height: 5px;
 }
 .dot {
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 5px;
+  height: 5px;
 }
 .dot--opening {
-  background: var(--accent);
+  background: var(--color-text);
 }
 .dot--closing {
-  box-shadow: inset 0 0 0 1.5px var(--muted);
+  border: 1px solid var(--color-text-subtle);
 }
 .calendar__foot {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-top: 10px;
-  padding: 0 6px;
-  color: var(--muted);
-  font-size: 12px;
+  gap: 16px;
+  min-height: 36px;
+  margin-top: 12px;
+  padding: 0 8px;
 }
 .legend {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 11px;
 }
 .today-btn {
   margin-left: auto;
-  padding: 5px 12px;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--accent);
-  font: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  padding: 8px 14px;
+  font-size: 11px;
 }
 .day-list {
-  margin-top: 28px;
+  margin-top: 56px;
 }
 .day-list__title {
-  margin: 0 0 14px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  font-weight: 500;
+  margin: 0 0 16px;
+  font-size: 12px;
 }
 .row {
   display: flex;
-  gap: 14px;
-  padding: 12px 0;
-  border-top: 1px solid var(--border);
+  gap: 16px;
+  padding: 20px 0;
+  border-top: var(--rule);
   color: inherit;
   text-decoration: none;
+}
+.row:last-child {
+  border-bottom: var(--rule);
 }
 .row__thumb {
   flex: 0 0 64px;
   height: 64px;
   overflow: hidden;
-  border-radius: 5px;
-  background: var(--track);
+  border-radius: var(--radius);
+  background: var(--color-surface);
 }
 .row__thumb img {
   display: block;
@@ -337,48 +324,38 @@ function goToday() {
 .row__body {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
   min-width: 0;
 }
 .row__gallery {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 .row__name {
-  font-family: Georgia, "Times New Roman", "Apple SD Gothic Neo", serif;
-  font-size: 17px;
-  line-height: 1.3;
+  font-size: 16px;
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
 }
 .row__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  color: var(--muted);
-  font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
 .row__badge {
-  padding: 1px 7px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 700;
+  padding: 2px 6px;
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: 10px;
+  text-transform: uppercase;
 }
 .state {
-  margin: 32px 0;
-  text-align: center;
-  color: var(--muted);
+  margin: 40px 0;
+  color: var(--color-text-muted);
 }
-.retry {
-  display: block;
-  margin: 12px auto 0;
-  padding: 9px 16px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
+.state p {
+  margin: 0 0 20px;
 }
 </style>

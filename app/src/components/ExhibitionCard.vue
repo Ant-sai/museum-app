@@ -25,8 +25,8 @@ const imageFailed = ref(false);
         decoding="async"
         @error="imageFailed = true"
       />
-      <div v-else class="card__image-fallback" role="img" :aria-label="`${exhibition.name} image unavailable`">
-        <span>{{ galleryName }}</span>
+      <div v-else class="card__image-fallback label" role="img" :aria-label="`${exhibition.name} image unavailable`">
+        {{ galleryName }}
       </div>
       <button
         class="card__save"
@@ -37,22 +37,23 @@ const imageFailed = ref(false);
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 3.75h12a1 1 0 0 1 1 1v16l-7-4.5-7 4.5v-16a1 1 0 0 1 1-1z" />
+          <path v-if="saved" d="m9 10 2.2 2.2L15.5 8" />
         </svg>
       </button>
     </div>
     <div class="card__body">
-      <div class="card__gallery-line">
+      <p class="card__gallery-line label">
         <span class="card__gallery">{{ galleryName }}</span>
         <span v-if="exhibition.locations?.length" class="card__location">
           · {{ exhibition.locations.join(", ") }}
         </span>
-      </div>
+      </p>
       <h2 class="card__name">
         <a class="card__link" :href="exhibition.url" target="_blank" rel="noopener">{{ exhibition.name }}</a>
       </h2>
       <p v-if="exhibition.nameKo" class="card__name-ko" lang="ko">{{ exhibition.nameKo }}</p>
       <div class="card__footer">
-        <p class="card__dates">{{ dates }}</p>
+        <p class="card__dates label">{{ dates }}</p>
         <a class="card__arrow" :href="exhibition.url" target="_blank" rel="noopener" :aria-label="`Visit ${exhibition.name} official page`">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6 18 18 6M7 6h11v11" />
@@ -66,14 +67,17 @@ const imageFailed = ref(false);
 <style scoped>
 .card {
   position: relative;
-  overflow: hidden;
+  padding: 32px 0 36px;
+}
+.card + .card {
+  border-top: var(--rule);
 }
 .card__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1.12;
-  border-radius: 5px;
-  background: var(--track);
+  border-radius: var(--radius);
+  background: var(--color-surface);
 }
 .card__image img {
   display: block;
@@ -82,67 +86,56 @@ const imageFailed = ref(false);
   object-fit: cover;
 }
 .card__image-fallback {
-  display: grid;
+  display: flex;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
-  place-items: center;
-  background:
-    radial-gradient(ellipse at 50% 40%, rgb(255 255 255 / 0.46), transparent 57%),
-    linear-gradient(140deg, #ded8cb, #bdb5a5);
-  color: #6f6a60;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
+  padding: 16px;
+  text-transform: uppercase;
 }
 .card__save {
   position: absolute;
   z-index: 1;
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   place-items: center;
   border: 0;
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: color var(--duration) var(--ease);
 }
 .card__save svg {
-  width: 22px;
+  width: 20px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.4;
+  stroke-linecap: round;
   stroke-linejoin: round;
 }
-.card__save[aria-pressed="true"] svg {
-  fill: var(--accent);
-  stroke: var(--accent);
+.card__save[aria-pressed="true"] {
+  color: var(--color-accent);
 }
 .card__body {
-  padding: 16px 0 18px;
+  padding-top: 20px;
 }
 .card__gallery-line {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: baseline;
-  gap: 5px;
+  gap: 6px;
   min-width: 0;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 13px;
+  margin: 0 0 12px;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 .card__gallery {
-  display: inline-flex;
   flex: 0 0 auto;
-  align-items: center;
   max-width: 55%;
-  padding: 0;
   overflow: hidden;
-  color: inherit;
-  font: inherit;
-  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -153,11 +146,10 @@ const imageFailed = ref(false);
 }
 .card__name {
   margin: 0;
-  font-family: Georgia, "Times New Roman", "Apple SD Gothic Neo", serif;
-  font-size: clamp(24px, 6vw, 32px);
-  line-height: 1.28;
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  font-size: clamp(20px, 5.4vw, 24px);
+  font-weight: var(--weight-medium);
+  line-height: 1.35;
+  letter-spacing: -0.005em;
 }
 .card__link {
   color: inherit;
@@ -167,7 +159,6 @@ const imageFailed = ref(false);
   position: absolute;
   z-index: 0;
   inset: 0;
-  border-radius: inherit;
   content: "";
 }
 .card__link:focus-visible {
@@ -176,16 +167,15 @@ const imageFailed = ref(false);
 .card:has(.card__link:focus-visible)::after {
   position: absolute;
   z-index: 2;
-  inset: -3px;
-  border: 2px solid var(--accent);
-  border-radius: 8px;
+  inset: 8px -8px;
+  border: 1px solid var(--color-text);
   content: "";
   pointer-events: none;
 }
 .card__name-ko {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 16px;
+  margin: 6px 0 0;
+  color: var(--color-text-muted);
+  font-size: 15px;
 }
 .card__footer {
   position: relative;
@@ -194,31 +184,25 @@ const imageFailed = ref(false);
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 .card__dates {
   margin: 0;
-  color: var(--muted);
-  font-size: 15px;
   font-variant-numeric: tabular-nums;
 }
 .card__arrow {
   display: grid;
   width: 36px;
   height: 36px;
+  margin-right: -8px;
   place-items: center;
-  color: var(--text);
+  color: var(--color-text);
 }
 .card__arrow svg {
-  width: 24px;
+  width: 20px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 1.4;
   stroke-linecap: square;
-  stroke-linejoin: miter;
-}
-.card__arrow:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 </style>

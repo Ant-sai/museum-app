@@ -15,8 +15,9 @@ export default defineConfig({
         short_name: "Exhibitions",
         description: "Discover current and upcoming exhibitions in Seoul galleries",
         lang: "en",
-        theme_color: "#f6f4ef",
-        background_color: "#f6f4ef",
+        // Same value as --color-bg in src/style.css (the manifest cannot read CSS variables).
+        theme_color: "#f6f3ee",
+        background_color: "#f6f3ee",
         display: "standalone",
         start_url: ".",
         icons: [
@@ -33,8 +34,16 @@ export default defineConfig({
             handler: "NetworkFirst",
             options: { cacheName: "exhibitions-data", networkTimeoutSeconds: 5 },
           },
+          {
+            // Pretendard ships ~90 unicode-range subsets: cache only the ones a page actually uses.
+            urlPattern: /Pretendard.*\.woff2$/,
+            handler: "CacheFirst",
+            options: { cacheName: "pretendard", expiration: { maxEntries: 100 } },
+          },
         ],
-        globIgnores: ["**/exhibitions.json"],
+        // Latin fonts are small: precache them with the app so it renders offline.
+        globPatterns: ["**/*.{js,css,html,svg,png,woff2}"],
+        globIgnores: ["**/exhibitions.json", "**/Pretendard*", "**/*-{cyrillic,cyrillic-ext,greek,vietnamese}-*"],
       },
     }),
   ],

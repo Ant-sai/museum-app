@@ -1,27 +1,49 @@
+/*
+ * Design tokens — single source of truth for colours, type and shapes.
+ * Theme inspired by Manufact Coffee (Seochon): warm cream walls, slate type,
+ * light and lacquered wood, brass details, brick for the one primary action.
+ */
 :root {
-  --bg: #f6f4ef;
-  --surface: #ffffff;
-  --track: #e8e4db;
-  --border: #e3ded3;
-  --text: #1f1d1a;
-  --muted: #6f6a60;
-  --accent: #b04a2a;
-  --accent-soft: #f6e3da;
-  --heart: #d6334f;
+  --color-bg: #f6f3ee;
+  --color-surface: #eee9e1;
+  --color-text: #3b4048;
+  --color-text-muted: #6b6862;
+  --color-text-subtle: #716c66; /* darkened from #8A8580 to reach WCAG AA (4.7:1) */
+  --color-border: #d8d2c8;
+  --color-wood-light: #c9af8c;
+  --color-wood-dark: #2a211c;
+  --color-accent: #9c4b37; /* brick: primary action only */
+  --color-accent-fill: #9c4b37; /* brick as a button background */
+  --color-on-accent: #f6f3ee;
+  --color-brass: #b08d55; /* decorative rules and active-state lines, never text */
+
+  --font-sans: "Instrument Sans", "Pretendard Variable", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Pretendard Variable", ui-monospace, monospace;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --tracking-caps: 0.14em;
+  --tracking-label: 0.1em;
+
+  --radius: 2px;
+  --rule: 1px solid var(--color-border);
+  --duration: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
   color-scheme: light;
 }
 
+/* Lacquered wood */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #141311;
-    --surface: #1f1d1a;
-    --track: #2a2824;
-    --border: #2f2c27;
-    --text: #f2efe8;
-    --muted: #a39d92;
-    --accent: #f08a66;
-    --accent-soft: #3a2219;
-    --heart: #ff5c78;
+    --color-bg: #1e1915;
+    --color-surface: #2a211c;
+    --color-text: #eee9e1;
+    --color-text-muted: #a39d92;
+    --color-text-subtle: #948e85;
+    --color-border: #3d342d;
+    --color-accent: #b8644e;
+    --color-accent-fill: #a85a45; /* slightly deeper so cream text reaches 4.5:1 */
+    --color-on-accent: #f6f3ee;
     color-scheme: dark;
   }
 }
@@ -32,13 +54,77 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
 
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
 button {
   cursor: pointer;
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* Spaced capitals, as on the shop sign: titles, tabs, buttons. */
+.caps {
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+/* Label details: dates, addresses, codes. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-text-subtle);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  transition: background-color var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+
+.btn--accent {
+  border-color: var(--color-accent-fill);
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
